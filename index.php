@@ -118,7 +118,7 @@
 			</main>
 			
 			<footer class="footer">
-			  Footer
+			  Footerr
 			</footer>
     </div>
 
