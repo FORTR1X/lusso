@@ -30,7 +30,7 @@
 		include "./config/db.php";
 	?>
   <div class="wrapper">
-		<header class="header">
+		<header class="header _anim-item">
 			<div class="navbar">
 				<a href="#">
 					<img class="navbar__logo" src="img/logo.png" alt="LOGO">
@@ -58,10 +58,10 @@
 					<div class="swiper-wrapper">
 						<!-- Slides -->
 						<?php
-							$slids_path = __DIR__ . "\img\slider";
+							$slids_path = "img/slider";
 							$files = array_diff(scandir($slids_path), array('..', '.'));
 							foreach ($files as $slide) {
-								$img_path = "\img\slider" . "\\" . $slide; 
+								$img_path = "img/slider" . "/" . $slide; 
 								echo '<div class="swiper-slide">';
 								echo "<img src=". $img_path ." />";
 								echo '</div>';
@@ -103,11 +103,11 @@
 						</div>
 					</div>
 
-					<div class="categories__list">
+					<div class="categories__list _anim-item _anim-no-hide">
 						<?php 
 							foreach ($categories as $category) {
 								echo "<div class='categories__category'>";
-								echo "<img src='/svg/category/". $category["id"] .".svg' alt='". $category["title"] ."' />";
+								echo "<img src='svg/category/". $category["id"] .".svg' alt='". $category["title"] ."' />";
 								echo "<span>". $category["title"] ."</span>";
 								echo "</div>";
 							}
@@ -124,5 +124,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="js/swiper.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>
