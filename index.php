@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#000000"/>
     <meta
-            name="description"
-            content="Lusso - Студия Вашей кухни"
+			name="description"
+			content="Lusso - Студия Вашей кухни"
     />
     <meta http-equiv=Content-Security-Policy content="connect-src ws: wss: https: http:">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,8 +26,8 @@
 </head>
 <body>
     <?php
-        include "./config/config.php";
-        include "./config/db.php";
+			include "./config/config.php";
+			include "./config/db.php";
     ?>
     <div class="wrapper">
 			<header class="header">
@@ -49,37 +49,37 @@
 					<img src="svg/search.svg" alt="search" class="navbar__search">
 				</div>
 			</header>
-	    
+
 			<main class="main">
 				<div class="swiper__content">
-					<!-- Slider main container -->
-					<div class="swiper">
-						<!-- Additional required wrapper -->
-						<div class="swiper-wrapper">
-							<!-- Slides -->
-							<?php
-								$slids_path = __DIR__ . "\img\slider";
-								$files = array_diff(scandir($slids_path), array('..', '.'));
-								foreach ($files as $slide) {
-									$img_path = "\img\slider" . "\\" . $slide; 
-									echo '<div class="swiper-slide">';
-									echo "<img src=". $img_path ." />";
-									echo '</div>';
-								}
-							?>
-						</div>
-						<!-- If we need pagination -->
-						<div class="swiper-pagination"></div>
+						<!-- Slider main container -->
+						<div class="swiper">
+							<!-- Additional required wrapper -->
+							<div class="swiper-wrapper">
+								<!-- Slides -->
+								<?php
+									$slids_path = __DIR__ . "\img\slider";
+									$files = array_diff(scandir($slids_path), array('..', '.'));
+									foreach ($files as $slide) {
+										$img_path = "\img\slider" . "\\" . $slide; 
+										echo '<div class="swiper-slide">';
+										echo "<img src=". $img_path ." />";
+										echo '</div>';
+									}
+								?>
+							</div>
+							<!-- If we need pagination -->
+							<div class="swiper-pagination"></div>
 
-						<!-- If we need navigation buttons -->
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
-					</div>
+							<!-- If we need navigation buttons -->
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
 				</div>
 
 				<div class="navbar__bottom">
-					<div class="navbar__info">
-						<span class="navbar__info_text">Наш адрес: <span><?php echo $config["address"]?></span></span>
+				  <div class="navbar__info">
+					  <span class="navbar__info_text">Наш адрес: <span><?php echo $config["address"]?></span></span>
 						<span class="navbar__info_text">Контакты: <span><?php echo $config["phone_1"]?>;</span> <span><?php echo $config["phone_2"] ?></span></span>
 						<span class="navbar__info_text"></span>
 						<span class="navbar__info_text">Ждём Вас: <span>Пн-Вс: 10:00-19:00</span></span>
@@ -104,7 +104,7 @@
 						</div>
 
 						<div class="categories__list">
-							<?php 
+						  <?php 
 								foreach ($categories as $category) {
 									echo "<div class='categories__category'>";
 									echo "<img src='/svg/category/". $category["id"] .".svg' alt='". $category["title"] ."' />";
@@ -118,11 +118,11 @@
 			</main>
 			
 			<footer class="footer">
-				Footerr
+				Footer
 			</footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="js/swiper.js"></script>
+		<script src="js/swiper.js"></script>
 </body>
 </html>
