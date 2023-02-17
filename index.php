@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#000000"/>
     <meta
-		name="description"
-		content="Lusso - Студия Вашей кухни"
+			name="description"
+			content="Lusso - Студия Вашей кухни"
     />
     <meta http-equiv=Content-Security-Policy content="connect-src ws: wss: https: http:">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,11 +25,11 @@
     />
 </head>
 <body>
-    <?php
+	<?php
 		include "./config/config.php";
 		include "./config/db.php";
-    ?>
-    <div class="wrapper">
+	?>
+  <div class="wrapper">
 		<header class="header">
 			<div class="navbar">
 				<a href="#">
@@ -120,9 +120,9 @@
 		<footer class="footer">
 			Footer
 		</footer>
-    </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="js/swiper.js"></script>
 </body>
 </html>
