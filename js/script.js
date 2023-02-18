@@ -1,15 +1,31 @@
 const animItems = document.querySelectorAll("._anim-item")
 
+function onClickBurgerMenu() {
+  let burgerBtn = document.querySelector(".navbar__burger_menu")
+  let headerElem = document.querySelector(".header")
+
+  burgerBtn.classList.toggle("_active")
+
+  if (burgerBtn.classList.contains("_active") && !headerElem.classList.contains("_active")) {
+    headerElem.classList.add("_active")
+  }
+
+  if (!burgerBtn.classList.contains("_active") && headerElem.classList.contains("_active")) {
+    headerElem.classList.remove("_active")
+  }
+}
+
 if (animItems.length > 0) {
   window.addEventListener('scroll', animOnScroll)
 
   function animOnScroll() {
-    console.log(window.pageYOffset)
     for (let index = 0; index < animItems.length; index++) {
       const animItem = animItems[index]
       const animItemHeight = animItem.offsetHeight;
       const animItemOffset = offset(animItem).top
       const animStart = 4
+      
+      let burgerBtn = document.querySelector(".navbar__burger_menu")
 
       let animItemPoint = window.innerHeight - animItemHeight / animStart
 
@@ -24,7 +40,19 @@ if (animItems.length > 0) {
           animItem.classList.remove("_active")
       }
 
-      if (animItem.classList.contains("header") && animItem.classList.contains("_active") && (window.pageYOffset < 10)) {
+      // Toggle black background when navbar scrolled
+      if (animItem.classList.contains("header") 
+        && animItem.classList.contains("_active")
+        && (window.pageYOffset < 10)
+        && !burgerBtn.classList.contains("_active")) {
+
+        animItem.classList.remove("_active")
+      }
+
+      // Toggle black background when burger menu active
+      if (burgerBtn.classList.contains("_active") && animItem.classList.contains(".header")) {
+        animItem.classList.add("_active")
+      } else if (!burgerBtn.classList.contains("_active") && animItem.classList.contains(".header")) {
         animItem.classList.remove("_active")
       }
     }
@@ -39,5 +67,5 @@ if (animItems.length > 0) {
 
   setTimeout(() => {
     animOnScroll()
-  }, 1000)
+  }, 300)
 }

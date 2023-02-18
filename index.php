@@ -37,6 +37,10 @@
 				</a>
 
 				<div class="navbar__category_container">
+					<div onclick="onClickBurgerMenu()" class="navbar__burger_menu">
+						<div class="navbar__burger_menu_line"></div>
+					</div>
+
 					<ul class="navbar__ul_category">
 						<?php
 							foreach ($nav_categories as $category) {
@@ -79,10 +83,9 @@
 
 			<div class="navbar__bottom">
 				<div class="navbar__info">
-					<span class="navbar__info_text">Наш адрес: <span><?php echo $config["address"]?></span></span>
-					<span class="navbar__info_text">Контакты: <span><?php echo $config["phone_1"]?>;</span> <span><?php echo $config["phone_2"] ?></span></span>
-					<span class="navbar__info_text"></span>
-					<span class="navbar__info_text">Ждём Вас: <span>Пн-Вс: 10:00-19:00</span></span>
+					<span class="navbar__info_text _anim-item" id="id1">Наш адрес: <span><?php echo $config["address"]?></span></span>
+					<span class="navbar__info_text _anim-item" id="id2">Контакты: <span><?php echo $config["phone_1"]?>;</span> <span><?php echo $config["phone_2"] ?></span></span>
+					<span class="navbar__info_text _anim-item" id="id3">Ждём Вас: <span>Пн-Вс: 10:00-19:00</span></span>
 				</div>
 
 				<div class="navbar__social">
@@ -91,11 +94,11 @@
 					<img src="svg/whatsapp.svg" alt="whats'app">
 				</div>
 
-				<span class="navbar__offerta">Не является публичной офертой</span>
+				<span class="navbar__offerta _anim-item">Не является публичной офертой</span>
 			</div>
 
 			<div class="categories">
-				<div class="categories__container">
+				<div class="categories__container _anim-item _anim-no-hide">
 					<div class="categories__offer">
 						<div class="categories__offer_container">
 							<h3>Мы предлагаем</h3>
@@ -125,5 +128,10 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="js/swiper.js"></script>
 	<script src="js/script.js"></script>
+	<!-- <script>
+		function onClickBurgerMenu() {
+
+		}
+	</script> -->
 </body>
 </html>
