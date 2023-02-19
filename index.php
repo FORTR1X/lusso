@@ -118,6 +118,38 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="presentation">
+				<div class="presentation__logo">
+					<span>Lusso</span>
+				</div>
+				<div class="presentation__container">
+					<div class="presentation__work_examples">
+						<div class="presentation__work_example" id="id1">
+							<img src="img/presentation/1.jpg" alt="1" id="id1"/>
+						</div>
+
+						<div class="presentation__work_example" id="id2">
+							<div class="presentation__work_example" id="id3">
+								<img src="img/presentation/2.jpg" alt="2" id="id2">
+								<img src="img/presentation/3.jpg" alt="3" id="id3">
+							</div>
+
+							<div class="presentation__work_example" id="id4">
+								<img src="img/presentation/4.jpg" alt="4" id="id4">
+								<img src="img/presentation/5.jpg" alt="5" id="id5">
+							</div>
+						</div>
+					</div>
+
+					<div class="partners">
+						<img src="svg/partners/ikea.svg" alt="ikea" />
+						<img src="svg/partners/ashley.svg" alt="ashley" />
+						<img src="svg/partners/RH.svg" alt="RH" />
+						<img src="svg/partners/Karatell.svg" alt="Karatell" />
+					</div>
+				</div>
+			</div>
 		</main>
 			
 		<footer class="footer">
@@ -128,10 +160,5 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="js/swiper.js"></script>
 	<script src="js/script.js"></script>
-	<!-- <script>
-		function onClickBurgerMenu() {
-
-		}
-	</script> -->
 </body>
 </html>

@@ -65,6 +65,8 @@ ul li {
 
 img {
   vertical-align: top;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 html {
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -205,7 +208,7 @@ body .wrapper .header._active {
             justify-content: space-between;
     position: fixed;
     left: 0;
-    top: 11%;
+    top: 100px;
   }
   @-webkit-keyframes burgerFadeIn {
     from {
@@ -578,12 +581,213 @@ body .wrapper .main .categories .categories__container .categories__offer {
     content: "";
     position: absolute;
     top: 750px;
-    width: 400%;
+    width: 100%;
     height: 200px;
     z-index: -1;
     background-color: #58A5CE;
-    -webkit-transform: rotate(25deg);
-            transform: rotate(25deg);
+    -webkit-transform: rotate(25deg) translate(-100px, 0) scaleX(2.5);
+            transform: rotate(25deg) translate(-100px, 0) scaleX(2.5);
+  }
+}
+body .wrapper .main .presentation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body .wrapper .main .presentation .presentation__logo {
+  display: none;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id1 img#id1 {
+  margin-right: 15px;
+  width: 280px;
+  height: 100%;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id3 {
+  height: 50%;
+  padding-bottom: 15px;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id3 img#id2 {
+  margin-right: 15px;
+  width: 280px;
+  height: 100%;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id3 img#id3 {
+  width: 420px;
+  height: 100%;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id4 {
+  height: 50%;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id4 img#id4 {
+  margin-right: 15px;
+  width: 490px;
+  height: 100%;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id4 img#id5 {
+  width: 210px;
+  height: 100%;
+}
+body .wrapper .main .presentation .presentation__container .presentation__work_examples::before {
+  content: "Lusso";
+  color: white;
+  font-style: italic;
+  font-weight: bolder;
+  font-size: 60px;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 30%;
+  width: 380px;
+  height: 200px;
+  background-color: rgba(183, 156, 156, 0.9);
+  border-radius: 13px;
+}
+body .wrapper .main .presentation .presentation__container .partners {
+  width: 1014px;
+  margin: 0 auto;
+  background-color: #FFBB6B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0 10px 0;
+}
+body .wrapper .main .presentation .presentation__container .partners img {
+  width: 15%;
+  height: 15%;
+}
+@media (max-width: 1024px) {
+  body .wrapper .main .presentation {
+    margin-top: 30px;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    position: relative;
+  }
+  body .wrapper .main .presentation .presentation__logo {
+    content: "Lusso";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    color: white;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 60px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 23%;
+    width: 380px;
+    height: 200px;
+    background-color: rgba(183, 156, 156, 0.9);
+    border-radius: 13px;
+    z-index: 1;
+  }
+  body .wrapper .main .presentation .presentation__container {
+    width: 400%;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id1 img#id1 {
+    margin-right: 15px;
+    width: 280px;
+    height: 100%;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id3 {
+    height: 50%;
+    padding-bottom: 15px;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id3 img#id2 {
+    margin-right: 15px;
+    width: 280px;
+    height: 100%;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id3 img#id3 {
+    width: 420px;
+    height: 100%;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id4 {
+    height: 50%;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id4 img#id4 {
+    margin-right: 15px;
+    width: 490px;
+    height: 100%;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples .presentation__work_example#id2 .presentation__work_example#id4 img#id5 {
+    width: 210px;
+    height: 100%;
+  }
+  body .wrapper .main .presentation .presentation__container .presentation__work_examples::before {
+    display: none;
+  }
+  body .wrapper .main .presentation .presentation__container .partners {
+    width: 25%;
+    min-height: 100px;
+    margin: 0;
+    background-color: #FFBB6B;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px 0 10px 0;
+  }
+  body .wrapper .main .presentation .presentation__container .partners img {
+    width: 15%;
+    height: 15%;
+  }
+}
+@media (max-width: 1024px) and (max-width: 660px) {
+  body .wrapper .main .presentation .presentation__container .partners img {
+    width: 20%;
+    height: 20%;
   }
 }
 body .wrapper .footer {
