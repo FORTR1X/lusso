@@ -150,6 +150,60 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="contacts">
+				<h4 class="contacts__header">Свяжитесь с нами</h4>
+				
+				<div class="contacts__container_wrapper">
+					<div class="contacts__container">
+						<div class="contacts__links _anim-item _anim-no-hide">
+							<div class="contacts__contact">
+								<div class="contacts__contact_header_logo">
+									<img class="contacts__contact_logo" src="svg/contact/address.svg" alt="Address">
+									<h3>Адрес</h3>
+								</div>
+								<?php echo "<span> ". $config["address"] ."</span>" ?>
+							</div>
+
+							<div class="contacts__contact">
+								<div class="contacts__contact_header_logo">
+									<img class="contacts__contact_logo" src="svg/contact/email.svg" alt="Email">
+									<h3>Электронная почта</h3>
+								</div>
+								<?php echo "<span> ". $config["email"] ."</span>" ?>
+							</div>
+
+							<div class="contacts__contact">
+								<div class="contacts__contact_header_logo">
+									<img class="contacts__contact_logo" src="svg/contact/call.svg" alt="call">
+									<h3>Позвоните нам</h3>
+								</div>
+								<div class="contacts__phones">
+									<?php 
+										echo "<p> ". $config["phone_1"] ."</p>";
+										echo "<p> ". $config["phone_2"] ."</p>";
+									?>
+								</div>	
+							</div>
+
+							<div class="contacts__contact">
+								<div class="contacts__contact_header_logo">
+									<img class="contacts__contact_logo" src="svg/contact/social.svg" alt="social">
+									<h3>Мы в сети</h3>
+								</div>
+								<div class="contacts__social_container">
+									<img src="svg/contact/vk.svg" alt="vk">
+									<img src="svg/contact/telegram.svg" alt="telegram">
+									<img src="svg/contact/whatsapp.svg" alt="whatsapp">
+								</div>
+							</div>
+						</div>
+
+
+						<div id="map" class="contacts__map _anim-item _anim-no-hide"></div>
+					</div>
+				</div>
+			</div>
 		</main>
 			
 		<footer class="footer">
@@ -158,6 +212,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<script src="https://yandex.st/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=f13f9a47-bb0f-4986-8a6f-4743a3da41f1&lang=ru_RU"></script>
 	<script src="js/swiper.js"></script>
 	<script src="js/script.js"></script>
 </body>
