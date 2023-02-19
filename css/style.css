@@ -973,4 +973,83 @@ body .wrapper .main .contacts::before {
 body .wrapper .footer {
   background-color: black;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 20px 0 20px 0;
+  font-size: 16px;
+}
+body .wrapper .footer .footer__logo {
+  width: 230px;
+  height: 180px;
+  border: 1px solid #FFB359;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 10px 10px 0;
+}
+body .wrapper .footer .footer__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 75%;
+}
+body .wrapper .footer .footer__info .footer__list {
+  margin-right: 15px;
+}
+body .wrapper .footer .footer__info .footer__list h3 {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-bottom: 12px;
+}
+body .wrapper .footer .footer__info .footer__list .footer__contacts_social {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+body .wrapper .footer .footer__info .footer__list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+body .wrapper .footer .footer__info .footer__list#id1 li {
+  font-weight: bolder;
+}
+body .wrapper .footer .footer__info .footer__list#id1 li span {
+  font-weight: normal;
+}
+body .wrapper .footer .footer__info .footer__about_us {
+  text-align: center;
+  width: 290px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
