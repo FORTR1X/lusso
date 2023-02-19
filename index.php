@@ -207,11 +207,11 @@
 		</main>
 			
 		<footer class="footer">
-			<div class="footer__logo">
-				<img src="img/logo.png" alt="Logo">
-			</div>
-
 			<div class="footer__info">
+				<div class="footer__logo">
+					<img src="img/logo.png" alt="Logo">
+				</div>
+
 				<ul class="footer__list" id="id1">
 					<h3>Контакты</h3>
 					<li>Наш адрес: <span><?php echo $config["address"] ?></span></li>
