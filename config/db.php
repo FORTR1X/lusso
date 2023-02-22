@@ -15,6 +15,12 @@ if ($connect->connect_error) {
 $nav_categories = get_array_from_sql_request("SELECT * FROM navigation_category", $connect);
 $categories = get_array_from_sql_request("SELECT * FROM category", $connect);
 $subcategories = get_array_from_sql_request("SELECT * FROM subcategory", $connect);
+$subcategories_by_category = array();
+foreach ($categories as $category) {
+  $subcategories = get_array_from_sql_request("SELECT * FROM subcategory WHERE category_id = ". $category["id"] .";", $connect);
+  $subcategories_by_category[] = $subcategories;
+}
+
 
 function get_array_from_sql_request($sql_request, $connect) {
   $response_array = array();

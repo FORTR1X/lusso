@@ -104,3 +104,14 @@ function init() {
 		myMap.setCenter(coord, 15);
 	});
 }
+
+const categories = document.getElementsByClassName("categories__category")
+console.log(categories)
+if (categories.length > 0) {
+  for (let category of categories) { category.addEventListener('click', toggleSubcategories) }
+}
+
+function toggleSubcategories(el) {
+  el.target.classList.toggle("_active")
+  el.stopPropagation()
+}

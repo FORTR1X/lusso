@@ -43,8 +43,10 @@
 
 					<ul class="navbar__ul_category">
 						<?php
-							foreach ($nav_categories as $category) {
-								echo "<li class='navbar__category'>". $category["title"] ."</li>";
+							foreach ($nav_categories as $cat) {
+								echo "<li class='navbar__category'>";
+								echo "<a href='#". $cat["page_url"] ."'>". $cat["title"]. "</a>";
+								echo "</li>";
 							}
 						?>
 					</ul>
@@ -55,6 +57,8 @@
 		</header>
 
 		<main class="main">
+			<?php echo "<a name='". $nav_categories[0]["page_url"] ."'></a>" ?>
+			<a name="main"></a>
 			<div class="swiper__content">
 				<!-- Slider main container -->
 				<div class="swiper">
@@ -98,6 +102,7 @@
 			</div>
 
 			<div class="categories">
+				<?php echo "<a name='". $nav_categories[1]["page_url"] ."'></a>" ?>
 				<div class="categories__container _anim-item _anim-no-hide">
 					<div class="categories__offer">
 						<div class="categories__offer_container">
@@ -109,9 +114,17 @@
 					<div class="categories__list _anim-item _anim-no-hide">
 						<?php 
 							foreach ($categories as $category) {
+								$subcat_count = count($subcategories_by_category[$category["id"] - 1]);
 								echo "<div class='categories__category'>";
-								echo "<img src='svg/category/". $category["id"] .".svg' alt='". $category["title"] ."' />";
-								echo "<span>". $category["title"] ."</span>";
+								echo "<img class='categories__category_logo' src='svg/category/". $category["id"] .".svg' alt='". $category["title"] ."' />";
+								echo "<div class='categories__subcategories' id='id". $subcat_count ."'>";
+									foreach ($subcategories_by_category[$category["id"] - 1] as $subcat) {
+										echo "<div class='categories__subcategory'>";
+										echo "<a href='". $subcat["url"] ."'>". $subcat["title"] ."</a>";
+										echo "</div>";
+									}
+								echo "</div>";
+								echo "<span class='categories__category_title'>". $category["title"] ."</span>";
 								echo "</div>";
 							}
 						?>
@@ -120,6 +133,7 @@
 			</div>
 
 			<div class="presentation">
+				<?php echo "<a name='". $nav_categories[2]["page_url"] ."'></a>" ?>
 				<div class="presentation__logo">
 					<span>Lusso</span>
 				</div>
@@ -152,6 +166,7 @@
 			</div>
 
 			<div class="contacts">
+				<?php echo "<a name='". $nav_categories[3]["page_url"] ."'></a>" ?>
 				<h4 class="contacts__header">Свяжитесь с нами</h4>
 				
 				<div class="contacts__container_wrapper">
@@ -199,7 +214,6 @@
 							</div>
 						</div>
 
-
 						<div id="map" class="contacts__map _anim-item _anim-no-hide"></div>
 					</div>
 				</div>
@@ -218,9 +232,9 @@
 					<li>Телефон: <span><?php echo $config["phone_1"] . "; " . $config["phone_2"] ?></span></li>
 					<li>Ждем Вас: <span>Пн-Вс: 10:00-19:00</span></li>
 					<li class="footer__contacts_social">
-						<img src="svg/contact/vk.svg" alt="vk">
-						<img src="svg/contact/telegram.svg" alt="telegram">
-						<img src="svg/contact/whatsapp.svg" alt="whatsapp">
+						<a href="#"><img src="svg/contact/vk.svg" alt="vk"></a>
+						<a href="#"><img src="svg/contact/telegram.svg" alt="telegram"></a>
+						<a href="#"><img src="svg/contact/whatsapp.svg" alt="whatsapp"></a>
 					</li>
 				</ul>
 
