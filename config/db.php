@@ -1,4 +1,5 @@
 <?php
+require_once "functions.php";
 $servername = "localhost";
 $username = "admin";
 $password = "6JGaj44B!1FAO9Rz";
@@ -17,23 +18,8 @@ $categories = get_array_from_sql_request("SELECT * FROM category", $connect);
 $subcategories = get_array_from_sql_request("SELECT * FROM subcategory", $connect);
 $subcategories_by_category = array();
 foreach ($categories as $category) {
-  $subcategories = get_array_from_sql_request("SELECT * FROM subcategory WHERE category_id = ". $category["id"] .";", $connect);
-  $subcategories_by_category[] = $subcategories;
-}
-
-
-function get_array_from_sql_request($sql_request, $connect) {
-  $response_array = array();
-  $response = mysqli_query($connect, $sql_request);
-
-  if ($response) {
-    while ($row = mysqli_fetch_assoc($response)) {
-      $response_array[] = $row;
-    }
-  }
-
-  return $response_array;
+  $subcat = get_array_from_sql_request("SELECT * FROM subcategory WHERE category_id = ". $category["id"] .";", $connect);
+  $subcategories_by_category[] = $subcat;
 }
 
 mysqli_close($connect);
-?>

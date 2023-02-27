@@ -6,4 +6,3 @@ $config = array(
     "phone_2" => "+7 (978) 706-73-31",
     "email" => "sevlusso@gmail.com"
 );
-?>

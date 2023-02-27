@@ -106,7 +106,6 @@ function init() {
 }
 
 const categories = document.getElementsByClassName("categories__category")
-console.log(categories)
 if (categories.length > 0) {
   for (let category of categories) { category.addEventListener('click', toggleSubcategories) }
 }
