@@ -1,10 +1,10 @@
 <!doctype html>
 <?php
-	include "index.php";
+	include "config/db.php";
 ?>
 <header class="header _anim-item">
   <div class="navbar">
-    <a href="#">
+    <a href="/lusso/">
       <img class="navbar__logo" src="img/logo.png" alt="LOGO">
     </a>
 
@@ -17,7 +17,7 @@
         <?php
           foreach ($nav_categories as $cat) {
             echo "<li class='navbar__category'>";
-            echo "<a href='#". $cat["page_url"] ."'>". $cat["title"]. "</a>";
+            echo "<a href='/lusso/#". $cat["page_url"] ."'>". $cat["title"]. "</a>";
             echo "</li>";
           }
         ?>

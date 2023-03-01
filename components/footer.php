@@ -1,6 +1,7 @@
 <!doctype html>
 <?php
-	include "index.php";
+	include "config/config.php";
+	include "config/db.php";
 ?>
 <footer class="footer">
   <div class="footer__info">

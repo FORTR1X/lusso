@@ -1,4 +1,5 @@
 const animItems = document.querySelectorAll("._anim-item")
+const currentUrl = window.location.pathname;
 
 function onClickBurgerMenu() {
   let burgerBtn = document.querySelector(".navbar__burger_menu")
@@ -40,6 +41,11 @@ if (animItems.length > 0) {
           animItem.classList.remove("_active")
       }
 
+			// Toggle black background on not main page
+			if (animItem.classList.contains("header") && currentUrl != "/lusso/") {
+				animItem.classList.add("_static")
+			}
+
       // Toggle black background when navbar scrolled
       if (animItem.classList.contains("header") 
         && animItem.classList.contains("_active")
@@ -70,47 +76,32 @@ if (animItems.length > 0) {
   }, 300)
 }
 
-ymaps.ready(init);        
-function init() {
-	var myMap = new ymaps.Map("map", {
-		center: [44.593620976977775,33.48917489047195],
-		zoom: 16
-	}, {
-		searchControlProvider: 'yandex#search'
-	});
- 
-	/* Начальный адрес метки */
-	var address = 'Россия, Севастополь, Руднева, д. 38';
- 
-	ymaps.geocode(address).then(function(res) {
-		var coord = res.geoObjects.get(0).geometry.getCoordinates();
- 
-		var myPlacemark = new ymaps.Placemark(coord, null, {
-			preset: 'islands#blueDotIcon',
-			draggable: true
-		});
- 
-		/* Событие dragend - получение нового адреса */
-		myPlacemark.events.add('dragend', function(e){
-			var cord = e.get('target').geometry.getCoordinates();
-			$('#ypoint').val(cord);
-			ymaps.geocode(cord).then(function(res) {
-				var data = res.geoObjects.get(0).properties.getAll();
-				$('#address').val(data.text);
-			});
-		});
-		
-		myMap.geoObjects.add(myPlacemark);	
-		myMap.setCenter(coord, 15);
-	});
-}
-
 const categories = document.getElementsByClassName("categories__category")
 if (categories.length > 0) {
   for (let category of categories) { category.addEventListener('click', toggleSubcategories) }
 }
-
 function toggleSubcategories(el) {
-  el.target.classList.toggle("_active")
-  el.stopPropagation()
+		el.target.classList.toggle("_active")
+	el.stopPropagation()
+}
+
+const subcategoryImages = document.getElementsByClassName("subcategory__images_img")
+const fullScreenContainer = document.getElementById("full_screen")
+const fullScreenImg = document.getElementById("full_screen_img")
+
+fullScreenContainer.addEventListener('click', function() {
+	fullScreenContainer.classList.toggle("_active")
+})
+fullScreenImg.addEventListener('click', function() {
+	fullScreenContainer.classList.remove("_active")
+})
+
+if (subcategoryImages.length > 0) {
+	for (let img of subcategoryImages) {
+		img.addEventListener('click', toggleImgFull)
+	}
+}
+function toggleImgFull(el) {
+	fullScreenContainer.classList.toggle("_active")
+	fullScreenImg.src = el.target.src;
 }

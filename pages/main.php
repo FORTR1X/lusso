@@ -30,31 +30,8 @@
 		include "config/config.php";
 	?>
   <div class="wrapper">
-		<header class="header _anim-item">
-			<div class="navbar">
-				<a href="#">
-					<img class="navbar__logo" src="img/logo.png" alt="LOGO">
-				</a>
-
-				<div class="navbar__category_container">
-					<div onclick="onClickBurgerMenu()" class="navbar__burger_menu">
-						<div class="navbar__burger_menu_line"></div>
-					</div>
-
-					<ul class="navbar__ul_category">
-						<?php
-							foreach ($nav_categories as $cat) {
-								echo "<li class='navbar__category'>";
-								echo "<a href='#". $cat["page_url"] ."'>". $cat["title"]. "</a>";
-								echo "</li>";
-							}
-						?>
-					</ul>
-				</div>
-
-				<img src="svg/search.svg" alt="search" class="navbar__search">
-			</div>
-		</header>
+		<!-- header -->
+		<?php include "components/header.php"; ?>
 
 		<main class="main">
 			<?php echo "<a name='". $nav_categories[0]["page_url"] ."'></a>" ?>
@@ -220,42 +197,11 @@
 			</div>
 		</main>
 
-		<footer class="footer">
-			<div class="footer__info">
-				<div class="footer__logo">
-					<img src="img/logo.png" alt="Logo">
-				</div>
-
-				<ul class="footer__list" id="id1">
-					<h3>Контакты</h3>
-					<li>Наш адрес: <span><?php echo $config["address"] ?></span></li>
-					<li>Телефон: <span><?php echo $config["phone_1"] . "; " . $config["phone_2"] ?></span></li>
-					<li>Ждем Вас: <span>Пн-Вс: 10:00-19:00</span></li>
-					<li class="footer__contacts_social">
-						<a href="#"><img src="svg/contact/vk.svg" alt="vk"></a>
-						<a href="#"><img src="svg/contact/telegram.svg" alt="telegram"></a>
-						<a href="#"><img src="svg/contact/whatsapp.svg" alt="whatsapp"></a>
-					</li>
-				</ul>
-
-				<ul class="footer__list" id="id2">
-					<h3>Разделы</h3>
-					<?php
-						foreach ($categories as $category) {
-							echo "<li>". $category["title"] ."</li>";
-						}
-					?>
-				</ul>
-
-				<div class="footer__about_us">
-					<p>Студия кухни Lusso работает на рынке Севастополя с 2004 года.</p>
-					<p>Интернет-магазин мебели «Lusso» © 2004 - 2023 Все права защищены</p>
-				</div>
-			</div>
-		</footer>
+		<!-- footer -->
+		<?php include "components/footer.php"; ?>
   </div>
 
-<!--  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="https://yandex.st/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=f13f9a47-bb0f-4986-8a6f-4743a3da41f1&lang=ru_RU"></script> -->
 	<script src="js/swiper.js"></script>
