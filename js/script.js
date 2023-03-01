@@ -81,7 +81,7 @@ if (categories.length > 0) {
   for (let category of categories) { category.addEventListener('click', toggleSubcategories) }
 }
 function toggleSubcategories(el) {
-		el.target.classList.toggle("_active")
+	el.target.classList.toggle("_active")
 	el.stopPropagation()
 }
 
@@ -89,12 +89,14 @@ const subcategoryImages = document.getElementsByClassName("subcategory__images_i
 const fullScreenContainer = document.getElementById("full_screen")
 const fullScreenImg = document.getElementById("full_screen_img")
 
-fullScreenContainer.addEventListener('click', function() {
-	fullScreenContainer.classList.toggle("_active")
-})
-fullScreenImg.addEventListener('click', function() {
-	fullScreenContainer.classList.remove("_active")
-})
+if (fullScreenContainer !== null && fullScreenImg != null) {
+	fullScreenContainer.addEventListener('click', function() {
+			fullScreenContainer.classList.toggle("_active")
+	})
+	fullScreenImg.addEventListener('click', function() {
+			fullScreenContainer.classList.remove("_active")
+	})
+}
 
 if (subcategoryImages.length > 0) {
 	for (let img of subcategoryImages) {

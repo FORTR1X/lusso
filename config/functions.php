@@ -59,6 +59,6 @@ function get_category_by_subcategory($categories, $subcategory) {
 
 function create_dir($dir) {
 	if (is_dir($dir)) return;
-	mkdir($dir, 0777);
+	mkdir($dir);
 	chmod($dir, 0777);
 }

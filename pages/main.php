@@ -201,10 +201,11 @@
 		<?php include "components/footer.php"; ?>
   </div>
 
-	<!--<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="https://yandex.st/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=f13f9a47-bb0f-4986-8a6f-4743a3da41f1&lang=ru_RU"></script> -->
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=f13f9a47-bb0f-4986-8a6f-4743a3da41f1&lang=ru_RU"></script>
 	<script src="js/swiper.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/ymap.js"></script>
 </body>
 </html>
