@@ -80,15 +80,18 @@
 
 				background: rgba(0, 0, 0, 0.5);
 
-				z-index: -10;
-				opacity: 0;
-				transition: 0.5s opacity;
-
 				display: flex;
 				justify-content: center;
 				align-content: center;
 
+				z-index: -10;
+				opacity: 0;
+
+				transition: 0.5s opacity;
+
 				.subcategory__images_full_img {
+					transition-duration: 0.7s;
+					transform: scale(0);
 					width: 800px;
 					height: 800px;
 
@@ -96,8 +99,11 @@
 				}
 
 				&._active {
-					z-index: 10;
 					opacity: 100%;
+					z-index: 10;
+					.subcategory__images_full_img {
+						transform: scale(1);
+					}
 				}
 			}
 
